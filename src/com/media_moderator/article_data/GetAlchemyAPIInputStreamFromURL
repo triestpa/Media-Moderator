@@ -24,7 +24,7 @@ import android.util.Log;
 import com.orchestr8.android.api.AlchemyAPI;
 import com.orchestr8.android.api.AlchemyAPI_NamedEntityParams;
 
-public class GetAlchemtAPIInputStreamFromURL {
+public class GetAlchemyAPIInputStreamFromURL {
 	
 	private InputStream getAlchemyXMLInputSteamFromURL(String articleURL){
 		
