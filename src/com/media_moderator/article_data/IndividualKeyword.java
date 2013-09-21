@@ -12,5 +12,14 @@ public class IndividualKeyword {
 		this.sentiment = sentiment;
 	}
 	
+    public String getWord(){
+    	return word;
+    }
+    public String getRelevance(){
+    	return word;
+    }
+    public String getSentiment(){
+    	return word;
+    }
 
 }
