@@ -15,9 +15,10 @@ public class Article_Parser {
 	
     private static final String ns = null;
     //TODO find way to pass source to parser
-    public String source = null;
+    public String Article_Source = null;
 	
-	public List<Article> parse(InputStream in) throws XmlPullParserException, IOException {
+	public List<Article> parse(InputStream in, String source) throws XmlPullParserException, IOException {
+		Article_Source = source;
         try {
             XmlPullParser parser = Xml.newPullParser();
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
@@ -77,7 +78,7 @@ public class Article_Parser {
             }
         }
         Log.i("parser", title);
-        return new Article(title, summary, link, source);
+        return new Article(title, summary, link, Article_Source);
     }
 
     // Processes title tags in the feed.

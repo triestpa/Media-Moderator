@@ -10,6 +10,8 @@ import com.example.media_moderator.R;
 public class MainActivity extends Activity {
 
 	public static final String EXTRA_FEED = null;
+	public static final String EXTRA_SOURCE = null;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +29,12 @@ public class MainActivity extends Activity {
 	
 	public void readCNN () {
 		String xmlLink = "http://rss.cnn.com/rss/cnn_topstories.xml";
+		String source = "CNN";
 
 	  	Intent intent = new Intent (this, Article_Pull.class);
     	intent.putExtra(EXTRA_FEED, xmlLink);
+    	intent.putExtra(EXTRA_SOURCE, source);
+
 
     	startActivity(intent);
 	}

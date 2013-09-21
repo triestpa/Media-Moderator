@@ -1,17 +1,24 @@
 package com.media_moderator.article_data;
 
 public class Article {
-    public final String title;
-    public final String link;
-    public final String summary;
-    public final String source;
+    protected String title;
+    protected String link;
+    protected String summary;
+    protected String source;
+    
+    protected Keyword[] keywords;
 
-    Article(String title, String summary, String link, String source) {
+    protected Article(String title, String summary, String link, String source) {
         this.title = title;
         this.summary = summary;
         this.link = link;
-        this.source = source;
-
-        
+        this.source = source;   
     }
+    
+    protected Article(String title, String summary, String link, String source, Keyword[] keywords) {
+    	this(title, summary, link, source);  
+        this.keywords = keywords;
+    }
+    
+    
 }

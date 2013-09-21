@@ -24,6 +24,8 @@ public class Article_Pull extends Activity {
 
 	public static final String WIFI = "Wi-Fi";
 	public static final String ANY = "Any";
+	
+	public static String source = null;
 
 	// Whether the display should be refreshed.
 	public static boolean refreshDisplay = true;
@@ -35,6 +37,7 @@ public class Article_Pull extends Activity {
 		
 		Intent intent = getIntent();
 		String link = intent.getStringExtra(MainActivity.EXTRA_FEED);
+		source = intent.getStringExtra(MainActivity.EXTRA_SOURCE);
 
 		new DownloadXmlTask().execute(link);
 
@@ -78,7 +81,7 @@ public class Article_Pull extends Activity {
 
 		try {
 			stream = downloadUrl(urlString);
-			articles = article_parse.parse(stream);
+			articles = article_parse.parse(stream, source);
 			// Makes sure that the InputStream is closed after the app is
 			// finished using it.
 		} finally {
