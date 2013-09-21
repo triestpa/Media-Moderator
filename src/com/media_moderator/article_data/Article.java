@@ -1,12 +1,15 @@
 package com.media_moderator.article_data;
 
+import java.util.ArrayList;
+
 public class Article {
     protected String title;
     protected String link;
     protected String summary;
     protected String source;
     
-    protected Keyword[] keywords;
+    protected ArrayList<IndividualKeyword> relevantKeywords;
+    protected ArrayList<Quotation> relevantQuotations;
 
     protected Article(String title, String summary, String link, String source) {
         this.title = title;
@@ -15,27 +18,11 @@ public class Article {
         this.source = source;   
     }
     
-    public String getTitle(){
-    	return title;
+    protected Article(String title, String summary, String link, String source, IndividualKeyword[] keywords, Quotation[] quotations) {
+    	this(title, summary, link, source);
+    	for (IndividualKeyword i: keywords) this.relevantKeywords.add(i);
+    	for (Quotation q: quotations) this.relevantQuotations.add(q);
+    	MasterKeyword.processArticle(this);
     }
-    
-    public String getLink(){
-    	return link;
-    }
-    
-    public String getSummary(){
-    	return summary;
-    }
-    
-    public String getSource(){
-    	return source;
-    }
-    
-    
-    protected Article(String title, String summary, String link, String source, Keyword[] keywords) {
-    	this(title, summary, link, source);  
-        this.keywords = keywords;
-    }
-    
-    
+   
 }
