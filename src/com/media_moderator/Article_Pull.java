@@ -96,9 +96,6 @@ public class Article_Pull extends Activity {
 		Article_Parser article_parse = new Article_Parser();
 		List<Article> articles = null;
 
-		Calendar rightNow = Calendar.getInstance();
-		SimpleDateFormat formatter = new SimpleDateFormat("MMM dd h:mmaa");
-
 		try {
 			stream = downloadUrl(urlString);
 			articles = article_parse.parse(stream, source);

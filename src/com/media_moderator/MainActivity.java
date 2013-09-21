@@ -28,6 +28,9 @@ public class MainActivity extends Activity {
 		readRSS("http://online.wsj.com/xml/rss/3_7085.xml", "WSJ");		
 		readRSS("http://feeds.reuters.com/Reuters/worldNews", "Reuters");
 			*/
+		
+		Intent intent = new Intent(this, KeywordList.class);
+		startActivity(intent);
 	}
 
 	@Override

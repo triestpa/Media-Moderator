@@ -24,5 +24,21 @@ public class Article {
     	for (Quotation q: quotations) this.relevantQuotations.add(q);
     	MasterKeyword.processArticle(this);
     }
-   
+    
+    public String getTitle(){
+    	return title;
+    }
+    
+    public String getLink(){
+    	return link;
+    }
+    
+    public String getSummary(){
+    	return summary;
+    }
+    
+    public String getSource(){
+    	return source;
+    }
+
 }

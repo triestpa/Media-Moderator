@@ -7,7 +7,6 @@ public class MasterKeyword {
 	public static ArrayList<MasterKeyword> masterKeywordList;
 	protected String word;
 	protected double relevanceScore;
-	protected ArrayList<Quotation> quotations;
 	protected ArrayList<Article> relevantArticles;
     protected ArrayList<Quotation> relevantQuotations;
 	
@@ -30,7 +29,7 @@ public class MasterKeyword {
 	public MasterKeyword(IndividualKeyword newKeyword){
 		this.word = newKeyword.word;
 		relevanceScore = 0;
-		quotations = new ArrayList<Quotation>();
+		relevantQuotations = new ArrayList<Quotation>();
 		relevantArticles = new ArrayList<Article>();
 	}
 }
