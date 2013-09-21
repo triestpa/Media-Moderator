@@ -70,7 +70,7 @@ public class Article_Parser {
             } 
             else if (name.equals("description")) {
                 summary = readDescription(parser);
-            } else if (name.equals("link")) {
+            } else if (name.equals("guid")) {
                 link = readLink(parser);
             }
             else {
@@ -90,10 +90,11 @@ public class Article_Parser {
     }
       
     // Processes link tags in the feed.
+    //TODO MAKE SIURE IT READS CORRECT GUID LINK
     private String readLink(XmlPullParser parser) throws IOException, XmlPullParserException {
-        parser.require(XmlPullParser.START_TAG, ns, "link");
+        parser.require(XmlPullParser.START_TAG, ns, "guid");
         String link = readText(parser);
-        parser.require(XmlPullParser.END_TAG, ns, "link");
+        parser.require(XmlPullParser.END_TAG, ns, "guid");
         return link;
     }
 
