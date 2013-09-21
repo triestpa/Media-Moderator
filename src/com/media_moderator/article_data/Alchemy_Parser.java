@@ -53,7 +53,6 @@ public class Alchemy_Parser {
     }
 	
 	 private Keyword readKeyword(XmlPullParser parser) throws XmlPullParserException, IOException {
-	        parser.require(XmlPullParser.START_TAG, ns, "item");
 
 	        String word = null;
 	    	String relevance = null;
@@ -68,7 +67,8 @@ public class Alchemy_Parser {
 	            } 
 	            else if (name.equals("relevance")) {
 	                relevance = readRelevance(parser);
-	            } else if (name.equals("sentiment")) {
+	            }
+	            else if (name.equals("sentiment")) {
 	                sentiment = readSentiment(parser);
 	            }
 	            else {
@@ -101,7 +101,7 @@ public class Alchemy_Parser {
 	        parser.nextTag();
 	        while (parser.getName() != "sentiment") {
 	        	if (parser.getName() == "type") {
-	        		sentiment = readText(parser);
+	        		sentiment = readText(parser); // Possible need for nextTag(); after this
 	        	}
 	        	else {
 	        		skip(parser);
