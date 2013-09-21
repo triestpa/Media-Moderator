@@ -20,7 +20,8 @@ import android.util.Log;
 import com.media_moderator.article_data.Article;
 import com.media_moderator.article_data.Article_Parser;
 
-public class Article_Retrieval extends Activity{
+public class Article_Pull extends Activity {
+
 	public static final String WIFI = "Wi-Fi";
 	public static final String ANY = "Any";
 
@@ -59,11 +60,11 @@ public class Article_Retrieval extends Activity{
 		@Override
 		protected void onPostExecute(List<Article> result) {
 			//do something with list of articles
+			//mainactivity.makelist(result)?
 		}
 	}
 
-	// Uploads XML from stackoverflow.com, parses it, and combines it with
-	// HTML markup. Returns HTML string.
+	// Uploads XML from news site, parses it
 	@SuppressLint("SimpleDateFormat")
 	private List<Article> loadXmlFromNetwork(String urlString)
 			throws XmlPullParserException, IOException {
@@ -74,14 +75,6 @@ public class Article_Retrieval extends Activity{
 
 		Calendar rightNow = Calendar.getInstance();
 		SimpleDateFormat formatter = new SimpleDateFormat("MMM dd h:mmaa");
-
-		/*
-		 * If I were to spend more time on the app I could add a settings menu
-		 * for toggling the summary 
- 			SharedPreferences sharedPrefs =
-		  	PreferenceManager .getDefaultSharedPreferences(this); boolean pref =
-		  	sharedPrefs.getBoolean("summaryPref", false);
-		 */
 
 		try {
 			stream = downloadUrl(urlString);
@@ -110,5 +103,6 @@ public class Article_Retrieval extends Activity{
 		conn.connect();
 		return conn.getInputStream();
 	}
+
 
 }

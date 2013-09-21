@@ -8,6 +8,7 @@ import java.util.List;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
+import android.util.Log;
 import android.util.Xml;
 
 public class Article_Parser {
@@ -75,6 +76,7 @@ public class Article_Parser {
                 skip(parser);
             }
         }
+        Log.i("parser", title);
         return new Article(title, summary, link, source);
     }
 
