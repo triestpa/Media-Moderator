@@ -9,7 +9,6 @@ public class Article {
     protected String source;
     
     protected ArrayList<IndividualKeyword> relevantKeywords;
-    protected ArrayList<Quotation> relevantQuotations;
 
     protected Article(String title, String summary, String link, String source) {
         this.title = title;
@@ -18,10 +17,10 @@ public class Article {
         this.source = source;   
     }
     
-    protected Article(String title, String summary, String link, String source, IndividualKeyword[] keywords, Quotation[] quotations) {
+    protected Article(String title, String summary, String link, String source, IndividualKeyword[] keywords) {
     	this(title, summary, link, source);
+    	
     	for (IndividualKeyword i: keywords) this.relevantKeywords.add(i);
-    	for (Quotation q: quotations) this.relevantQuotations.add(q);
     	MasterKeyword.processArticle(this);
     }
     
@@ -39,6 +38,10 @@ public class Article {
     
     public String getSource(){
     	return source;
+    }
+    
+    public ArrayList<IndividualKeyword> getKeywords(){
+    	return relevantKeywords;
     }
 
 }

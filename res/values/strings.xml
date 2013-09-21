@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_article__pull">Article_Pull</string>
     <string name="title_activity_keyword_list">KeywordList</string>
+    <string name="title_activity_keyword_detail">KeywordDetail</string>
 
 </resources>

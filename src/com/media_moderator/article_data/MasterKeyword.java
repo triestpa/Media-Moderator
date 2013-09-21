@@ -8,7 +8,6 @@ public class MasterKeyword {
 	protected String word;
 	protected double relevanceScore;
 	protected ArrayList<Article> relevantArticles;
-    protected ArrayList<Quotation> relevantQuotations;
 	
 	public boolean equals(IndividualKeyword compareKeyword){
 		return (this.word.equals(compareKeyword.word));
@@ -21,7 +20,6 @@ public class MasterKeyword {
 			}
 			int wordIndex = masterKeywordList.indexOf(newWord);
 			masterKeywordList.get(wordIndex).relevanceScore += newWord.relevance*newWord.relevance;
-			for(Quotation q: newArticle.relevantQuotations) masterKeywordList.get(wordIndex).relevantQuotations.add(q);
 			masterKeywordList.get(wordIndex).relevantArticles.add(newArticle);
 		}
 	}
@@ -29,7 +27,6 @@ public class MasterKeyword {
 	public MasterKeyword(IndividualKeyword newKeyword){
 		this.word = newKeyword.word;
 		relevanceScore = 0;
-		relevantQuotations = new ArrayList<Quotation>();
 		relevantArticles = new ArrayList<Article>();
 	}
 }
