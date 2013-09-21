@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		/*
 		readRSS("http://feeds.foxnews.com/foxnews/world", "Fox");
 		readRSS("http://rss.cnn.com/rss/cnn_world.rss", "CNN");
 		readRSS("http://america.aljazeera.com/content/ajam/articles.rss", "AlJazeera");
@@ -26,7 +27,7 @@ public class MainActivity extends Activity {
 		readRSS("http://rss.nytimes.com/services/xml/rss/nyt/World.xml", "NYT");
 		readRSS("http://online.wsj.com/xml/rss/3_7085.xml", "WSJ");		
 		readRSS("http://feeds.reuters.com/Reuters/worldNews", "Reuters");
-			
+			*/
 	}
 
 	@Override
