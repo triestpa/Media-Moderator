@@ -20,6 +20,7 @@ public class MainActivity extends Activity {
 		readRSS("http://feeds.foxnews.com/foxnews/world", "Fox");
 		readRSS("http://rss.cnn.com/rss/cnn_world.rss", "CNN");
 		readRSS("http://america.aljazeera.com/content/ajam/articles.rss", "AlJazeera");
+		//mod parser to not take videos
 		//readRSS("http://feeds.bbci.co.uk/news/rss.xml", "BBC");
 		readRSS("http://feeds.nbcnews.com/feeds/topstories", "NCB");
 		readRSS("http://rss.nytimes.com/services/xml/rss/nyt/World.xml", "NYT");

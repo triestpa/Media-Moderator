@@ -15,6 +15,23 @@ public class Article {
         this.source = source;   
     }
     
+    public String getTitle(){
+    	return title;
+    }
+    
+    public String getLink(){
+    	return link;
+    }
+    
+    public String getSummary(){
+    	return summary;
+    }
+    
+    public String getSource(){
+    	return source;
+    }
+    
+    
     protected Article(String title, String summary, String link, String source, Keyword[] keywords) {
     	this(title, summary, link, source);  
         this.keywords = keywords;

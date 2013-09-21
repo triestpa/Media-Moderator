@@ -6,6 +6,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Iterator;
 import java.util.List;
 
 import org.xmlpull.v1.XmlPullParserException;
@@ -19,6 +20,8 @@ import android.util.Log;
 
 import com.media_moderator.article_data.Article;
 import com.media_moderator.article_data.Article_Parser;
+import com.parse.Parse;
+import com.parse.ParseObject;
 
 public class Article_Pull extends Activity {
 
@@ -34,6 +37,8 @@ public class Article_Pull extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		Parse.initialize(this, "YO4ZzIsSLUjidoULRC0Y4BpjF9i4Cu5NHrtF4SQl", "kfUWKx6tkBwqatMouX6YEnznIDCjrh1Ei9K06oos");
 		
 		Intent intent = getIntent();
 		Bundle extras = intent.getExtras();
@@ -65,9 +70,17 @@ public class Article_Pull extends Activity {
 
 		@Override
 		protected void onPostExecute(List<Article> result) {
+			Iterator<Article> articleIter = result.iterator();
+			while (articleIter.hasNext()){
+				Article thisArticle = (Article)articleIter.next();
+				ParseObject article = new ParseObject("Article");
+				article.put("Title", (thisArticle.getTitle()));
+				article.put("Link", (thisArticle.getLink()));
+				article.put("Summary", (thisArticle.getSummary()));
+				article.put("Source", (thisArticle.getSource()));
+				article.saveInBackground();
+			}
 			finish();
-			//do something with list of articles
-			//mainactivity.makelist(result)?
 		}
 	}
 
