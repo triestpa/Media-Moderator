@@ -1,6 +1,5 @@
 package com.media_moderator.article_data;
 
-import java.net.URL;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -18,11 +17,9 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 
-import android.database.CursorJoiner.Result;
 import android.util.Log;
 
 import com.orchestr8.android.api.AlchemyAPI;
-import com.orchestr8.android.api.AlchemyAPI_NamedEntityParams;
 
 public class GetAlchemyAPIInputStreamFromURL {
 	
