@@ -1,4 +1,4 @@
-package article_data;
+package com.media_moderator.article_data;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,6 +13,8 @@ import android.util.Xml;
 public class Article_Parser {
 	
     private static final String ns = null;
+    //TODO find way to pass source to parser
+    public String source = null;
 	
 	public List<Article> parse(InputStream in) throws XmlPullParserException, IOException {
         try {
@@ -73,7 +75,7 @@ public class Article_Parser {
                 skip(parser);
             }
         }
-        return new Article(title, summary, link);
+        return new Article(title, summary, link, source);
     }
 
     // Processes title tags in the feed.

@@ -1,10 +1,14 @@
-package com.example.media_moderator;
+package com.media_moderator;
+
+import com.example.media_moderator.R;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 
 public class MainActivity extends Activity {
+
+	public static final String EXTRA_FEED = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
