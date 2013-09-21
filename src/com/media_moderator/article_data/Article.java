@@ -10,14 +10,14 @@ public class Article {
     
     protected ArrayList<IndividualKeyword> relevantKeywords;
 
-    protected Article(String title, String summary, String link, String source) {
+    public Article(String title, String summary, String link, String source) {
         this.title = title;
         this.summary = summary;
         this.link = link;
         this.source = source;   
     }
     
-    protected Article(String title, String summary, String link, String source, IndividualKeyword[] keywords) {
+    public Article(String title, String summary, String link, String source, IndividualKeyword[] keywords) {
     	this(title, summary, link, source);
     	
     	for (IndividualKeyword i: keywords) this.relevantKeywords.add(i);

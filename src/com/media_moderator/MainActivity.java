@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
 
 	public void readRSS(String xmlLink, String source) {
 
-		Intent intent = new Intent(this, Article_Pull.class);
+		Intent intent = new Intent(this, ArticlePull.class);
 		Bundle extras = new Bundle();
 		
 		extras.putString(EXTRA_FEED, xmlLink);

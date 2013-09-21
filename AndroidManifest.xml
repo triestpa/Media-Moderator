@@ -27,12 +27,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.media_moderator.Article_Pull"
+            android:name="com.media_moderator.ArticlePull"
             android:label="@string/title_activity_article__pull" >
         </activity>
         <activity
             android:name="com.media_moderator.KeywordList"
             android:label="@string/title_activity_keyword_list" >
+        </activity>
+
+        <activity
+            android:name="com.media_moderator.ArticleListActivity"
+            android:label="@string/title_activity_article_list" >
         </activity>
     </application>
 

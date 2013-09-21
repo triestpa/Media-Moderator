@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,6 +17,8 @@ import com.example.media_moderator.R;
 import com.media_moderator.article_data.IndividualKeyword;
 
 public class KeywordList extends Activity {
+	
+	public static final String EXTRA_KEYWORD = "KEYWORD";
 
 	public ListAdapter mAdapter;
 	// public List<IndividualKeyword> mData = new
@@ -28,11 +31,11 @@ public class KeywordList extends Activity {
 		setContentView(R.layout.activity_keyword_list);
 		ListView lv = (ListView) findViewById(R.id.listView);
 
-		IndividualKeyword key1 = new IndividualKeyword("fuck", 86.0, "positive");
-		IndividualKeyword key2 = new IndividualKeyword("bitches", 64.0,
+		IndividualKeyword key1 = new IndividualKeyword("fuck", "86.0", "positive");
+		IndividualKeyword key2 = new IndividualKeyword("bitches", "64.0",
 				"negative");
-		IndividualKeyword key3 = new IndividualKeyword("get", 13.0, "mixed");
-		IndividualKeyword key4 = new IndividualKeyword("money", 70.0, "neutral");
+		IndividualKeyword key3 = new IndividualKeyword("get", "13.0", "mixed");
+		IndividualKeyword key4 = new IndividualKeyword("money", "70.0", "neutral");
 
 		mData.add(key1.getWord());
 		mData.add(key2.getWord());
@@ -53,10 +56,17 @@ public class KeywordList extends Activity {
 					int position, long id) {
 				TextView clickedview = (TextView) view;
 				String keyword = (String) clickedview.getText();
-				//begin keyword detail view
-				//search make list of all articles with keyword
-				//pass list as intent to next 
+				toArticleList(keyword);
 			}
 		});
+	}
+	
+	protected void toArticleList(String keyword){
+		// begin keyword detail view
+		// search make list of all articles with keyword(bundle)
+		// pass list as intent to next activity(ArticleListActivity)
+		Intent intent = new Intent(this, ArticleListActivity.class);
+		intent.putExtra(EXTRA_KEYWORD, keyword);
+		startActivity(intent);
 	}
 }

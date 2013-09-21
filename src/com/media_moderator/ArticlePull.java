@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 
@@ -23,7 +21,7 @@ import com.media_moderator.article_data.Article_Parser;
 import com.parse.Parse;
 import com.parse.ParseObject;
 
-public class Article_Pull extends Activity {
+public class ArticlePull extends Activity {
 
 	public static final String WIFI = "Wi-Fi";
 	public static final String ANY = "Any";

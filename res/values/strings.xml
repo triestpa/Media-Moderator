@@ -7,5 +7,7 @@
     <string name="title_activity_article__pull">Article_Pull</string>
     <string name="title_activity_keyword_list">KeywordList</string>
     <string name="title_activity_keyword_detail">KeywordDetail</string>
+    <string name="title_activity_article__list">Article_List</string>
+    <string name="title_activity_article_list">ArticleList</string>
 
 </resources>
