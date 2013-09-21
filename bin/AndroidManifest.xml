@@ -30,6 +30,10 @@
             android:name="com.media_moderator.Article_Pull"
             android:label="@string/title_activity_article__pull" >
         </activity>
+        <activity
+            android:name="com.media_moderator.KeywordList"
+            android:label="@string/title_activity_keyword_list" >
+        </activity>
     </application>
 
 </manifest>

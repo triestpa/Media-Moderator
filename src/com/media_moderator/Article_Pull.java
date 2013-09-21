@@ -36,11 +36,14 @@ public class Article_Pull extends Activity {
 		super.onCreate(savedInstanceState);
 		
 		Intent intent = getIntent();
-		String link = intent.getStringExtra(MainActivity.EXTRA_FEED);
-		source = intent.getStringExtra(MainActivity.EXTRA_SOURCE);
+		Bundle extras = intent.getExtras();
 
+		String link = extras.getString(MainActivity.EXTRA_FEED);
+		source = extras.getString(MainActivity.EXTRA_SOURCE);
+
+		Log.i("article pull", link);
+		
 		new DownloadXmlTask().execute(link);
-
 	}
 
 	// Implementation of AsyncTask used to download XML feed
@@ -62,6 +65,7 @@ public class Article_Pull extends Activity {
 
 		@Override
 		protected void onPostExecute(List<Article> result) {
+			finish();
 			//do something with list of articles
 			//mainactivity.makelist(result)?
 		}
