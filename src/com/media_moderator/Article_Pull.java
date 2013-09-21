@@ -38,7 +38,7 @@ public class Article_Pull extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		Parse.initialize(this, "YO4ZzIsSLUjidoULRC0Y4BpjF9i4Cu5NHrtF4SQl", "kfUWKx6tkBwqatMouX6YEnznIDCjrh1Ei9K06oos");
+		Parse.initialize(this, "RpjXB4IaNyQGebIyiOa51xgbbrwtSl27z794mbMv", "1asjo85VXN6WHHEB02Tk2CkzLanuhU3DYZC9wsWi");
 		
 		Intent intent = getIntent();
 		Bundle extras = intent.getExtras();
@@ -73,6 +73,9 @@ public class Article_Pull extends Activity {
 			Iterator<Article> articleIter = result.iterator();
 			while (articleIter.hasNext()){
 				Article thisArticle = (Article)articleIter.next();
+				if (thisArticle.getLink() == null)
+					continue;
+				
 				ParseObject article = new ParseObject("Article");
 				article.put("Title", (thisArticle.getTitle()));
 				article.put("Link", (thisArticle.getLink()));
